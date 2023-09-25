@@ -1,0 +1,27 @@
+﻿  Game.cpp
+  Snake.cpp
+D:\c++ projects\Snake Game\Snake Game\Snake.cpp(15,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+D:\c++ projects\Snake Game\Snake Game\Snake.cpp(35,8): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\c++ projects\Snake Game\Snake Game\Snake.cpp(36,8): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\c++ projects\Snake Game\Snake Game\Snake.cpp(78,35): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+D:\c++ projects\Snake Game\Snake Game\Snake.cpp(78,32): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  main.cpp
+  Generating Code...
+D:\c++ projects\Snake Game\Snake Game\Snake.cpp(86): warning C4715: 'Snake::getNextFoodLocation': not all control paths return a value
+  Snake Game.vcxproj -> D:\c++ projects\Snake Game\Debug\Snake Game.exe

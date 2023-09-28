@@ -36,7 +36,7 @@ bool Snake::died()
 	int y = snakeShape[0].getGlobalBounds().top;
 	int screenx = screen->getSize().x;
 	int screeny = screen->getSize().y;
-	return (x > screenx || x < 0) || (y > screeny || y < 0);
+	return (x > screenx-RECT_SIZE || x < 0) || (y > screeny-RECT_SIZE || y < 0);
 }
 
 bool Snake::ateFood(Food* fd)

@@ -20,6 +20,7 @@ void GameController::start()
 void GameController::gameLoop()
 {
 	bool gameOver = false;
+	bool pause = false;
 	sf::Vector2<int> direction(0, 0);
 	while (!gameOver) {
 		renderScene();
@@ -29,25 +30,32 @@ void GameController::gameLoop()
 				if (event.key.code == sf::Keyboard::Up) {
 					direction.y = -1;
 					direction.x = 0;
+					pause = false;
 				}
 				else if (event.key.code == sf::Keyboard::Down) {
 					direction.y = 1;
 					direction.x = 0;
+					pause = false;
 				}
 				else if (event.key.code == sf::Keyboard::Left) {
 					direction.x = -1;
 					direction.y = 0;
+					pause = false;
 				}
 				else if (event.key.code == sf::Keyboard::Right) {
 					direction.x = 1;
 					direction.y = 0;
+					pause = false;
+				}
+				else if (event.key.code == sf::Keyboard::P) {
+					pause = !pause;
 				}
 			}
 			if (event.type == sf::Event::Closed) {
 				exit(0);
 			}
 		}
-		snake.moveSnake(direction);
+		snake.moveSnake(direction, pause);
 
 		if (snake.died()) {
 			gameOver = true;
@@ -80,5 +88,7 @@ void GameController::displayScore()
 void GameController::welcomeMessage()
 {
 	cout << "Welcome!\n" <<
-		"Use arrow buttons to move the snake\n\n";
+		"Use arrow buttons to move the snake\n" <<
+		"Press (P) to pause the game\n" <<
+		"Repress (P), or press an arrow button to continue playing!\n\n";
 }

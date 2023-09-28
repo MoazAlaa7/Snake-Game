@@ -12,7 +12,7 @@ public:
 	void drawSnake();
 	bool died();
 	bool ateFood(Food *);
-	void moveSnake(sf::Vector2<int>);
+	void moveSnake(sf::Vector2<int>, bool);
 	sf::Vector2f getNextFoodLocation();
 
 private:

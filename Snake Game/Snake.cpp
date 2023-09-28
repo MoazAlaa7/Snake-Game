@@ -55,17 +55,28 @@ bool Snake::ateFood(Food* fd)
 	return false;
 }
 
-void Snake::moveSnake(sf::Vector2<int> direction)
+void Snake::moveSnake(sf::Vector2<int> direction, bool pause)
 {
-	snake_direction_list.push_front(direction);
-	lastDirection = snake_direction_list.back();
-	snake_direction_list.pop_back();
-	std::list<sf::Vector2<int>>::iterator i = snake_direction_list.begin();
 	int index = 0;
-	while (i != snake_direction_list.end() && index < snakeLength) {
-		snakeShape[index].move(movementScale * (*i).x, movementScale * (*i).y);
-		index++;
-		i++;
+
+	// Pause the snake 
+	if (pause) {
+		while (index < snakeLength) {
+			snakeShape[index].move(0, 0);
+			index++;
+		}
+	}
+	// Move the snake
+	else {
+		snake_direction_list.push_front(direction);
+		lastDirection = snake_direction_list.back();
+		snake_direction_list.pop_back();
+		std::list<sf::Vector2<int>>::iterator i = snake_direction_list.begin();
+		while (i != snake_direction_list.end() && index < snakeLength) {
+			snakeShape[index].move(movementScale * (*i).x, movementScale * (*i).y);
+			index++;
+			i++;
+		}
 	}
 }
 

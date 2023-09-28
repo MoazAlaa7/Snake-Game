@@ -12,7 +12,7 @@ public:
 private:
 	void gameLoop();
 	void renderScene();
-	void displayScore();
+	void displayScore(int);
 	void welcomeMessage();
 
 	sf::RenderWindow* screen;

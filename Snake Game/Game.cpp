@@ -59,7 +59,7 @@ void GameController::gameLoop()
 
 		if (snake.died()) {
 			gameOver = true;
-			displayScore();
+			displayScore(score);
 			std::this_thread::sleep_for(4s);
 		}
 		if (snake.ateFood(food)) {
@@ -80,9 +80,21 @@ void GameController::renderScene()
 	food->drawFood();
 }
 
-void GameController::displayScore()
+void GameController::displayScore(int score)
 {
-	cout << "Your Score:\n" << score;
+	ifstream input("Save.txt");
+	int highestScore = 0;
+	input >> highestScore;
+	ofstream output("Save.txt");
+	if (score > highestScore) {
+		output << score;
+		cout << "CONGRATS!!\nNEW HIGHEST SCORE: \n" << score;
+	}
+	else {
+		output << highestScore;
+		cout << "YOUR SCORE: \n" << score << "\n\n";
+		cout << "HIGHEST SCORE: \n" << highestScore;
+	}
 }
 
 void GameController::welcomeMessage()

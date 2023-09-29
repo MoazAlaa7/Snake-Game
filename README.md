@@ -2,7 +2,9 @@
 A snake game in c++ using SFML library for GUI.
 
 ## Preview
-https://github.com/MoazAlaa7/Snake-Game/assets/125766238/c2e558f0-404a-48ba-b390-4f68b8c3a115
+https://github.com/MoazAlaa7/Snake-Game/assets/125766238/2767fb68-e936-4128-937e-07cdb4a74eeb
+
+
 
 ## Wanna play?
 Just run *__Snake Game.exe__* from `Snake-Game/Release/` and enjoy!

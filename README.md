@@ -1,5 +1,5 @@
 # Snake-Game
-A snake game in c++ using SFML library for GUI.
+A snake game in c++ with OOP and using SFML library for GUI.
 
 ## Preview
 https://github.com/MoazAlaa7/Snake-Game/assets/125766238/2767fb68-e936-4128-937e-07cdb4a74eeb
